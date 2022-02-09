@@ -22,7 +22,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('rango/', include('rango.urls')),  #map to be handeled by rango URLs starting with rango/
-    path('admin/', admin.site.urls),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+   path('rango/', include('rango.urls')),  #map to be handeled by rango URLs starting with rango/ delete???
+    path('admin/', admin.site.urls),#delete??
+    path('about/', views.about, name='about'),
+    path('category/<slug:category_name_slug>/', views.show_category, name='show_category'),
+    path('add_category/', views.add_category, name='add_category'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)#delee
 
