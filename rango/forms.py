@@ -34,7 +34,7 @@ class PageForm(forms.ModelForm):
 
         if url and not url.startswith('http://'):
             url = f'http://{url}'
-            cleaned_data['url'] = urlpatterns
+            cleaned_data['url'] = url
 
         return cleaned_data
 
